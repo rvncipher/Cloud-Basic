@@ -3,7 +3,7 @@
 ## Steps
 
 1. Create Bucket in S3 service;
-2. Go to **Objects** -> upload files.
+2. Go to **Objects** -> upload files(without main folder, just upload the files).
 3. Go to **Properties** -> *Enable* the Static Website Hosting.
 4. Go to **Permissions**
 
@@ -40,4 +40,29 @@ Paste it in permission policy section;
 And done!
 you can go back to Properties section, and there one link would be visible, just access that;
 
+Link example:
+```
+http:cipher-bucketdemo.s3.website.ap-south-1.amazonaws.com
+```
+
 **Enjoy your hosted Site**
+
+---
+
+## How to host Two site from one Object?
+
+while uploading files, this time we upload folder first, like `site1` and `site2` and its content inside it.
+
+everything else remains same;
+
+Now while visiting we just need to add `/site1/` or so on at end;
+
+Take example that we have two Sites in **Object**
+
+Then link would be: 
+`http:cipher-bucketdemo.s3.website.ap-south-1.amazonaws.com/site1/`
+and
+
+`http:cipher-bucketdemo.s3.website.ap-south-1.amazonaws.com/site2/`
+
+*remember to add `/` at end as well because else by default S3 looks for default file `index.html` which is not there as per our upload, we have site1 and site2 So it won't work.*
